@@ -1,0 +1,36 @@
+{
+  "name": "discord-harmony",
+  "version": "0.1.0",
+  "description": "A Discord Bot Framework",
+  "main": "src/index.js",
+  "types": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MythicManiac/harmony.git"
+  },
+  "keywords": [
+    "Discord",
+    "Bot",
+    "Framework"
+  ],
+  "author": "Mythic",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/MythicManiac/harmony/issues"
+  },
+  "homepage": "https://github.com/MythicManiac/harmony#readme",
+  "devDependencies": {
+    "@types/node": "^6.0.53",
+    "typescript": "^2.1.4",
+    "webpack": "^1.14.0"
+  },
+  "dependencies": {
+    "discord.js": "github:hydrabolt/discord.js#indev",
+    "nedb": "^1.8.0",
+    "node-opus": "^0.2.4",
+    "opusscript": "0.0.1"
+  }
+}
