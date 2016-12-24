@@ -1,5 +1,4 @@
 import * as assert from 'assert'
-import {} from 'jasmine'
 
 import { parseArgs } from '../src/utils'
 

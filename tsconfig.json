@@ -16,7 +16,7 @@
         "noLib": false,
         "preserveConstEnums": true,
         "suppressImplicitAnyIndexErrors": true,
-        "types": ["node"]
+        "types": ["node", "jasmine"]
     },
     "include": [
       "src/**/*",
