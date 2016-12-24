@@ -27,7 +27,13 @@ export class CommandManager {
     var commandClass = this.commands[name]
     var argString = content.slice(name.length)
     var instance: Command = new commandClass(message, argString)
-    instance.execute()
+    try {
+      instance.execute()
+    } catch(e) {
+      try {
+        message.reply(`Failed to execute command \`\`\`${e.stack}\`\`\``)
+      } catch(e) {}
+    }
   }
 
   addCommand(name: string, cls: any) {

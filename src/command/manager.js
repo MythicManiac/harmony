@@ -19,7 +19,15 @@ class CommandManager {
         var commandClass = this.commands[name];
         var argString = content.slice(name.length);
         var instance = new commandClass(message, argString);
-        instance.execute();
+        try {
+            instance.execute();
+        }
+        catch (e) {
+            try {
+                message.reply(`Failed to execute command \`\`\`${e.stack}\`\`\``);
+            }
+            catch (e) { }
+        }
     }
     addCommand(name, cls) {
         if (name in this.commands) {
