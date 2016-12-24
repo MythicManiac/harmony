@@ -31,8 +31,6 @@
   },
   "dependencies": {
     "discord.js": "github:hydrabolt/discord.js#indev",
-    "nedb": "^1.8.0",
-    "node-opus": "^0.2.4",
-    "opusscript": "0.0.1"
+    "nedb": "^1.8.0"
   }
 }
