@@ -1,18 +1,28 @@
 "use strict";
 function parseArgs(argString) {
-    const re = /\s*(?:("|')([^]*?)\1|(\S+))\s*/g;
-    const result = [];
-    let match = [];
-    var argCount = argString.length;
-    while (--argCount && (match = re.exec(argString))) {
-        result.push(match[2] || match[3]);
+    var result = [];
+    argString = argString.trim() + '" ';
+    var part = "";
+    var withinQuotes = false;
+    function pushIfNotEmpty() {
+        if (part.length > 0) {
+            result.push(part);
+            part = "";
+        }
     }
-    if (match && re.lastIndex < argString.length) {
-        const re2 = /^("|')([^]*)\1$/g;
-        result.push(argString.substr(re.lastIndex).replace(re2, '$2'));
+    for (let i = 0; i < argString.length; i++) {
+        var currentChar = argString[i];
+        if (currentChar == ' ' && !withinQuotes) {
+            pushIfNotEmpty();
+            continue;
+        }
+        if (currentChar == '"') {
+            pushIfNotEmpty();
+            withinQuotes = !withinQuotes;
+            continue;
+        }
+        part += currentChar;
     }
     return result;
 }
 exports.parseArgs = parseArgs;
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = parseArgs;
