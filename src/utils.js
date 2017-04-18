@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 function parseArgs(argString) {
     var result = [];
     argString = argString.trim() + '" ';

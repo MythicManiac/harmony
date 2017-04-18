@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var bot_1 = require("./bot");
 exports.Bot = bot_1.Bot;
 var utils_1 = require("./utils");
