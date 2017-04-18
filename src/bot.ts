@@ -16,7 +16,7 @@ export class Bot {
   }
 
   start(token: string) {
-    this.client.on('ready', () => console.log('Scrimbot ready'))
+    this.client.on('ready', () => console.log('Bot ready'))
     this.client.on('message', message => this.commandManager.processMessage(message))
     this.client.login(token)
   }

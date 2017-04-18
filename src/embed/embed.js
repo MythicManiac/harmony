@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const Discord = require("discord.js");
 const embed = new Discord.RichEmbed()
     .setTitle('Very Nice Title')
@@ -14,5 +15,4 @@ const embed = new Discord.RichEmbed()
     .addField('Inline Field', 'Hmm 🤔', true)
     .addField('\u200b', '\u200b', true)
     .addField('Second (3rd place) Inline Field', 'I\'m in the ZOONE', true);
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = embed;

@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const COMMAND_IDENTIFIER = '!';
 class CommandManager {
     constructor() {
@@ -18,16 +19,20 @@ class CommandManager {
         }
         var commandClass = this.commands[name];
         var argString = content.slice(name.length);
-        var instance = new commandClass(message, argString);
-        try {
+        var runCommand = new Promise(function (resolve) {
+            var instance = new commandClass(message, argString);
             instance.execute();
-        }
-        catch (e) {
+            resolve();
+        });
+        runCommand
+            .catch(function (error) {
             try {
-                message.reply(`Failed to execute command \`\`\`${e.stack}\`\`\``);
+                message.reply(`Failed to execute command \`\`\`${error.stack}\`\`\``);
             }
-            catch (e) { }
-        }
+            catch (e) {
+                message.reply(`Failed to execute command, error printing failed with \`\`\`${e.stack}\`\`\``);
+            }
+        });
     }
     addCommand(name, cls) {
         if (name in this.commands) {

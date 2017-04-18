@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const utils_1 = require("../utils");
 class Command {
     constructor(message, argString) {
@@ -9,5 +10,4 @@ class Command {
 }
 exports.Command = Command;
 ;
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = Command;
