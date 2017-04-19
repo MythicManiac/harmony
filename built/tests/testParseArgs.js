@@ -1,6 +1,7 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const assert = require("assert");
-const utils_1 = require("../src/utils");
+const utils_1 = require("../utils");
 describe("utils", function () {
     describe("parseArgs", function () {
         it("Should parse arguments properly", function () {
