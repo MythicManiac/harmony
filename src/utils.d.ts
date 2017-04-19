@@ -1,2 +1,2 @@
-export declare function parseArgs(argString: any): any[];
+export declare function parseArgs(argString: any): string[];
 export default parseArgs;
