@@ -2,10 +2,11 @@
   "name": "discord-harmony",
   "version": "0.1.0",
   "description": "A Discord Bot Framework",
-  "main": "src/index.js",
+  "main": "built/index.js",
   "types": "src/index.ts",
   "scripts": {
-    "test": "mocha"
+    "watch": "tsc -p . -w",
+    "test": "mocha \"built/tests\""
   },
   "repository": {
     "type": "git",

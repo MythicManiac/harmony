@@ -1,6 +1,6 @@
 import * as assert from 'assert'
 
-import { parseArgs } from '../src/utils'
+import { parseArgs } from '../utils'
 
 describe("utils", function() {
   describe("parseArgs", function() {
