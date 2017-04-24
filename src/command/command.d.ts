@@ -5,6 +5,6 @@ export declare abstract class Command {
     protected argString: string;
     protected args: string[];
     constructor(message: any, argString: string);
-    abstract execute(): void;
+    abstract execute(): Promise<void>;
 }
 export default Command;

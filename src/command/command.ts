@@ -13,6 +13,6 @@ export abstract class Command {
     this.args = parseArgs(argString)
   }
 
-  public abstract execute() : void
+  public abstract execute() : Promise<void>
 };
 export default Command

@@ -19,10 +19,13 @@ class CommandManager {
         }
         var commandClass = this.commands[name];
         var argString = content.slice(name.length);
-        var runCommand = new Promise(function (resolve) {
+        var runCommand = new Promise(function (resolve, reject) {
             var instance = new commandClass(message, argString);
-            instance.execute();
-            resolve();
+            instance.execute().then(() => {
+                resolve();
+            }).catch((error) => {
+                reject(error);
+            });
         });
         runCommand
             .catch(function (error) {
