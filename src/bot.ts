@@ -3,7 +3,7 @@ import * as Discord from 'discord.js'
 import { CommandManager } from './command'
 
 export class Bot {
-  client: any
+  client: Discord.Client
   commandManager: CommandManager
 
   constructor() {

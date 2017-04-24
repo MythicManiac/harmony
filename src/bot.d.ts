@@ -1,6 +1,7 @@
+import * as Discord from 'discord.js'
 import { CommandManager } from './command';
 export declare class Bot {
-    client: any;
+    client: Discord.Client;
     commandManager: CommandManager;
     constructor();
     start(token: string): void;

@@ -1,7 +1,9 @@
+import * as Discord from 'discord.js'
+
 import { parseArgs } from '../utils'
 
 export abstract class Command {
-  protected message: any
+  protected message: Discord.Message
   protected argString: string
   protected args: string[]
 
