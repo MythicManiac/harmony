@@ -28,10 +28,13 @@ export class CommandManager {
     var argString = content.slice(name.length)
 
 
-    var runCommand = new Promise(function(resolve) {
+    var runCommand = new Promise(function(resolve, reject) {
         var instance: Command = new commandClass(message, argString)
-        instance.execute()
-        resolve()
+        instance.execute().then(() => {
+          resolve()
+        }).catch((error) => {
+          reject(error)
+        })
     })
 
     runCommand

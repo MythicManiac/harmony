@@ -1,9 +1,8 @@
-import { Database } from './database';
+import * as Discord from 'discord.js'
 import { CommandManager } from './command';
 export declare class Bot {
-    client: any;
+    client: Discord.Client;
     commandManager: CommandManager;
-    database: Database;
     constructor();
     start(token: string): void;
     loadDatabase(path: string): void;
