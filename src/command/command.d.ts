@@ -6,5 +6,6 @@ export declare abstract class Command {
     protected args: string[];
     constructor(message: any, argString: string);
     abstract execute(): Promise<void>;
+    sendResponse(content: string, dmResponse: boolean): Promise<Discord.Message[] | Discord.Message>;
 }
 export default Command;
